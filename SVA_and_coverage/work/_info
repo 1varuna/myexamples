@@ -1,0 +1,223 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dF:/Programming/Verilog programs/SVA_and_coverage
+vfifo
+Z1 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 C2JYUJncmgEYAmfE1bgH:3
+I3O[84FUdH51l1HImc8cmM2
+!s105 fifo_sv_unit
+S1
+R0
+w1595072950
+8fifo.sv
+Ffifo.sv
+L0 1
+Z3 OL;L;10.4e;61
+Z4 !s108 1595189580.000000
+Z5 !s107 fifo_drv.sv|fifo_gen.sv|fifo_trans.sv|fifo_top.sv|test.sv|fifo_env.sv|fifo.sv|
+Z6 !s90 -reportprogress|300|-sv|fifo.sv|fifo_env.sv|test.sv|fifo_top.sv|
+!i113 0
+Z7 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Xfifo_drv_sv_unit
+R1
+!s110 1595187681
+!i10b 1
+!s100 Q`eHZbYA3O3`OlUPe0?j:1
+IZ`ZJUZ7MEgLE9MHRTVHeW2
+VZ`ZJUZ7MEgLE9MHRTVHeW2
+!i103 1
+S1
+R0
+w1595187675
+8fifo_drv.sv
+Z8 Ffifo_drv.sv
+Z9 Ffifo_trans.sv
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1595187681.000000
+!s107 fifo_trans.sv|fifo_drv.sv|
+!s90 -reportprogress|300|-sv|fifo_drv.sv|
+!i113 0
+R7
+Xfifo_env_sv_unit
+R1
+!s110 1595189580
+!i10b 1
+!s100 k`n9F`Bf3T_czZKF^MV[70
+IG9:QSZCoLiVjL@WLZ=79O2
+VG9:QSZCoLiVjL@WLZ=79O2
+!i103 1
+S1
+R0
+Z10 w1595188121
+Z11 8fifo_env.sv
+Z12 Ffifo_env.sv
+R9
+Z13 Ffifo_gen.sv
+R8
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
+Xfifo_gen_sv_unit
+R1
+!s110 1595187595
+!i10b 1
+!s100 J=Wb6zlTiVj6>HM6jTVQA2
+IQl]35Y;haN9Ja5]zZo:AE3
+VQl]35Y;haN9Ja5]zZo:AE3
+!i103 1
+S1
+R0
+w1595187592
+8fifo_gen.sv
+R13
+R9
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1595187595.000000
+!s107 fifo_trans.sv|fifo_gen.sv|
+!s90 -reportprogress|300|-sv|fifo_gen.sv|
+!i113 0
+R7
+Yfifo_intf
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 _g^o>bPCMOm3I3_ealP473
+Iznl0d]Nihz?XFU^RP^aQS1
+!s105 fifo_intf_sv_unit
+S1
+R0
+w1595187501
+8fifo_intf.sv
+Ffifo_intf.sv
+L0 1
+R3
+!s108 1595187506.000000
+!s107 fifo_intf.sv|
+!s90 -reportprogress|300|-sv|fifo_intf.sv|
+!i113 0
+R7
+vfifo_top
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 WdIR>iA<IMJze58F;gSCf3
+I?VR9R<kl5bP:UJiRZTHSg2
+!s105 fifo_top_sv_unit
+S1
+R0
+w1595187777
+8fifo_top.sv
+Ffifo_top.sv
+L0 1
+R3
+R4
+R5
+R6
+!i113 0
+R7
+Xfifo_trans_sv_unit
+R1
+!s110 1595187539
+!i10b 1
+!s100 KNg1;[3PZ_XFkUINnTCYL0
+InAlVV^8[jNW1ijlJU]g?73
+VnAlVV^8[jNW1ijlJU]g?73
+!i103 1
+S1
+R0
+w1595187533
+8fifo_trans.sv
+R9
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1595187538.000000
+!s107 fifo_trans.sv|
+!s90 -reportprogress|300|-sv|fifo_trans.sv|
+!i113 0
+R7
+4test
+R1
+DXx4 work 12 test_sv_unit 0 22 k[hC9JH>dYI?CUD19F@@10
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 GDJ=GVfPMPV6^9GXfU^>F2
+I1=2XIhJj@5@0J@F;7e@RX3
+!s105 test_sv_unit
+S1
+R0
+w1595165379
+Z14 8test.sv
+Z15 Ftest.sv
+L0 2
+R3
+R4
+R5
+R6
+!i113 0
+R7
+Xtest_sv_unit
+R1
+Vk[hC9JH>dYI?CUD19F@@10
+r1
+!s85 0
+31
+!i10b 1
+!s100 SPA7D>Z?m6COAc4]6a1nY1
+Ik[hC9JH>dYI?CUD19F@@10
+!i103 1
+S1
+R0
+R10
+R11
+R12
+R9
+R13
+R8
+R14
+R15
+L0 1
+R3
+R4
+R5
+R6
+!i113 0
+R7
