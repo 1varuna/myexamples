@@ -39,6 +39,13 @@ interface #(parameter FIFO_WIDTH=32,FIFO_DEPTH=2<<5) fifo_intf(
 		default input #2ns output #2ns;
 		input clk;
 		input rstN;
-		output 
+		input [FIFO_WIDTH-1:0] data_out;
+		input full;
+		input empty;
+		output rd_en; 
+		
+	endclocking
+
+	modport fifo_probe_mp(clocking fifo_probe_cb);	// Defining port directions for fifo prober
 
 endinterface
