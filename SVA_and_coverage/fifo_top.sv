@@ -1,8 +1,11 @@
+`include "defines.sv"
+
 module fifo_top;		// Testbench top file
 	// Clock gen logic
 	bit clk;
-	forever begin
-		#clk = ~clk;
+	
+	always begin
+		#5 clk = ~clk;
 	end
 	
 	bit rstN;
@@ -12,20 +15,28 @@ module fifo_top;		// Testbench top file
 	end
 	
 	// instantiate interface to connect DUT and test
-	fifo_intf intf(clk,rstN);
+	//fifo_intf intf(clk,rstN);
+	fifo_intf 	#(.FIFO_WIDTH(`DEF_FIFO_WIDTH),
+			.FIFO_DEPTH(`DEF_FIFO_DEPTH))
+			intf 	
+				(.clk(clk),
+				.rstN(rstN));
+
 	test t1(intf);
 
 	// Connect DUT and interface signals
-	fifo DUT(
-	.clk(intf.clk),
-	.rstN(intf.rstN),
-	.wr_en(intf.wr_en),
-	.read_en(intf.rd_en),
-	.data_in(intf.data_in),
-	.data_out(intf.data_out),
-	.empty(intf.empty),
-	.full(intf.full)
-	);
+	fifo 	 	#(.FIFO_WIDTH(`DEF_FIFO_WIDTH),
+			.FIFO_DEPTH(`DEF_FIFO_DEPTH))
+			DUT	(
+			.clk(intf.clk),
+			.rstN(intf.rstN),
+			.write_en(intf.wr_en),
+			.read_en(intf.rd_en),
+			.data_in(intf.data_in),
+			.data_out(intf.data_out),
+			.empty(intf.empty),
+			.full(intf.full)
+			);
 
 	initial begin
 		$dumpfile("dump.wlf");

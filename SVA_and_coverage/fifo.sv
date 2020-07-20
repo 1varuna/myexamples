@@ -1,4 +1,8 @@
-module fifo (
+module fifo #(
+parameter FIFO_WIDTH = 8,
+parameter FIFO_DEPTH = 2**5)
+
+(
   clk, 
   rstN, 
   write_en, 
@@ -8,8 +12,6 @@ module fifo (
   empty, 
   full
 );
-parameter FIFO_WIDTH = 8;
-parameter FIFO_DEPTH = 2<<5;
 
 input wire clk;
 input wire rstN;

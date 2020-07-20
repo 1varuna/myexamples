@@ -2,10 +2,9 @@
 `include "fifo_gen.sv"
 `include "fifo_drv.sv"
 
-
-class fifo_env;
+class fifo_env #(parameter FIFO_WIDTH = 32,FIFO_DEPTH=32);
 	// Instantiate Driver and Generator classes
-	fifo_gen gen;
+	fifo_gen #(FIFO_WIDTH) gen;
 	fifo_drv drv;
 
 	// Create a mailbox to send/receive data packets

@@ -1,10 +1,7 @@
-class fifo_gen;
+//`include "fifo_trans.sv"
+class fifo_gen #(parameter FIFO_WIDTH=32);
 
 	rand fifo_trans trans;			// Create an instance of trans class
-
-	mailbox mbx_out;			// Mailbox used to send data to driver (outward bound)
-	rand bit[FIFO_WIDTH-1:0] data_in;	// Generate random data
-       	rand bit wr_en;				// Generate wr_en randomly
 
 	mailbox gen2drv;			// Outward bound (GEN-->DRV) packet 
 
@@ -14,7 +11,7 @@ class fifo_gen;
 
 	task run;
 
-		int num_data = $urandom(63,255);
+		int num_data = $urandom_range(63,255);
 
 		repeat(num_data) begin
 			trans = new();

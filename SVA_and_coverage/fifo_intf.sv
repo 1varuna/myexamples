@@ -1,4 +1,4 @@
-interface #(parameter FIFO_WIDTH=32,FIFO_DEPTH=2<<5) fifo_intf(
+interface fifo_intf #(parameter FIFO_WIDTH=32, parameter FIFO_DEPTH=(2**5))(
 	input clk,				// input clock
 	input rstN,				//active low reset
 	input wr_en,				// write enable
@@ -15,11 +15,11 @@ interface #(parameter FIFO_WIDTH=32,FIFO_DEPTH=2<<5) fifo_intf(
 	input clk;				// input clock
 	input rstN;				//active low reset
 	input wr_en;				// write enable
-	input [FIFO_WIDTH-1:0] data_in;		// Input Data
+	input data_in;				// Input Data
 	input rd_en;				// read enable
 	input empty;				// fifo empty
 	input full;				// fifo full
-	input [FIFO_WIDTH-1:0] data_out;	// Output data
+	input data_out;				// Output data
 
 	endclocking
 	
@@ -29,7 +29,7 @@ interface #(parameter FIFO_WIDTH=32,FIFO_DEPTH=2<<5) fifo_intf(
 		default input #2ns output #2ns;
 		input clk;
 		input rstN;
-		output [FIFO_WIDTH-1:0] data_in;
+		output data_in;
 		output wr_en;
 	endclocking
 
@@ -39,7 +39,7 @@ interface #(parameter FIFO_WIDTH=32,FIFO_DEPTH=2<<5) fifo_intf(
 		default input #2ns output #2ns;
 		input clk;
 		input rstN;
-		input [FIFO_WIDTH-1:0] data_out;
+		input data_out;
 		input full;
 		input empty;
 		output rd_en; 
