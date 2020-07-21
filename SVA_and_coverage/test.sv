@@ -6,7 +6,7 @@ program test(fifo_intf intf);
 	// declare an env object
 	fifo_env #(.FIFO_WIDTH(`DEF_FIFO_WIDTH),.FIFO_DEPTH(`DEF_FIFO_DEPTH)) env;
 	
-	int num_data = $urandom_range(10,`DEF_FIFO_DEPTH);
+	int num_data = $urandom_range(25,`DEF_FIFO_DEPTH);
 
 	// Instantiate the environment object
 	initial begin

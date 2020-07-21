@@ -5,7 +5,7 @@ package fifo_tb_pkg;
 	`include "fifo_trans.sv"
 	`include "fifo_gen.sv"
 	`include "fifo_drv.sv"
-	`include "fifo_slave.sv"
+	`include "fifo_slv_drv.sv"
 	`include "fifo_env.sv"
 	
 	/*

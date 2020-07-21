@@ -5,7 +5,7 @@ class fifo_env #(parameter FIFO_WIDTH = 32,parameter FIFO_DEPTH=32);
 	// Instantiate Driver and Generator classes
 	fifo_gen # (.FIFO_WIDTH(FIFO_WIDTH),.FIFO_DEPTH(FIFO_DEPTH)) gen;
 	fifo_drv drv;
-	fifo_slave slv;
+	fifo_slv_drv slv_drv;
 
 	// Create a mailbox to send/receive data packets
 
@@ -24,7 +24,7 @@ class fifo_env #(parameter FIFO_WIDTH = 32,parameter FIFO_DEPTH=32);
 		// instantiate driver and generator
 		drv = new(vif,gen2drv);
 		gen = new(gen2drv,gen2slv_drv);
-		slv = new(vif,gen2slv_drv);
+		slv_drv = new(vif,gen2slv_drv);
 	endfunction
 
 	task pre_test;			// Run the reset task
@@ -35,7 +35,7 @@ class fifo_env #(parameter FIFO_WIDTH = 32,parameter FIFO_DEPTH=32);
 		fork
 			gen.run();
 			drv.run();
-			slv.run();
+			slv_drv.run();
 		join_any
 	endtask
 

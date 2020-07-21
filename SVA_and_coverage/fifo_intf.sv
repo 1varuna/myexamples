@@ -35,7 +35,7 @@ interface fifo_intf #(parameter FIFO_WIDTH=32, parameter FIFO_DEPTH=(2**5))(
 
 	modport fifo_drv_mp(clocking fifo_drv_cb,input clk,input rstN);	// Defining port directions for fifo driver
 
-	clocking fifo_slave_cb @(posedge clk);
+	clocking fifo_slv_drv_cb @(posedge clk);
 		default input #2ns output #2ns;
 		//input clk;
 		//input rstN;
@@ -46,6 +46,6 @@ interface fifo_intf #(parameter FIFO_WIDTH=32, parameter FIFO_DEPTH=(2**5))(
 		
 	endclocking
 
-	modport fifo_slave_mp(clocking fifo_slave_cb,input clk,input rstN);	// Defining port directions for fifo slave
+	modport fifo_slv_drv_mp(clocking fifo_slv_drv_cb,input clk,input rstN);	// Defining port directions for fifo slv
 
 endinterface
