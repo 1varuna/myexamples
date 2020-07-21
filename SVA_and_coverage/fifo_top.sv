@@ -1,4 +1,11 @@
-`include "defines.sv"
+// Include and Import RTL files
+//`include "fifo_rtl_pkg.sv"
+//import fifo_rtl_pkg::*;
+
+// Include and Import TB files
+//`include "fifo_tb_pkg.sv"
+//import fifo_tb_pkg::*;
+`include "test.sv"
 
 module fifo_top;		// Testbench top file
 	// Clock gen logic
@@ -11,8 +18,15 @@ module fifo_top;		// Testbench top file
 	bit rstN;
 	initial begin
 		rstN = 0;
-		#5 rstN = 0;
+		#100 rstN = 1;
 	end
+	
+	bit write_en;
+	bit read_en;
+	bit [`DEF_FIFO_WIDTH-1:0] data_in;
+	bit [`DEF_FIFO_WIDTH-1:0] data_out;
+	bit empty;
+	bit full;	
 	
 	// instantiate interface to connect DUT and test
 	//fifo_intf intf(clk,rstN);
@@ -20,7 +34,14 @@ module fifo_top;		// Testbench top file
 			.FIFO_DEPTH(`DEF_FIFO_DEPTH))
 			intf 	
 				(.clk(clk),
-				.rstN(rstN));
+				.rstN(rstN),
+				.wr_en(wr_en),			// write enable
+				.data_in(data_in),		// Input Data
+				.rd_en(rd_en),			// read enable
+				.empty(empty),			// fifo empty
+				.full(full),			// fifo full
+				.data_out(data_out)		// Output data
+			);
 
 	test t1(intf);
 

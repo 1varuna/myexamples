@@ -20,7 +20,7 @@ module fifo_assertions #(parameter FIFO_WIDTH=32) (
 	// Mutual exclusion condition for wr and rd enable
 	a_wr_rd_enable:	assert property (@(posedge clk) disable iff (!rstN) !(write_en&&read_en));
 
-	/*
+	/*	TODO : COMPLETE LATER
 	* More assertions to be added:
 		* Valid upper count range i.e, number of transactions are less than
 		* FIFO_DEPTH

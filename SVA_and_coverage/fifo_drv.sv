@@ -3,7 +3,6 @@
 class fifo_drv;
 	virtual interface fifo_intf fifo_vif;
 	`define DRV_IF fifo_vif.fifo_drv_cb
-	`define PROBE_IF fifo_vif.fifo_probe_mp.fifo_probe_cb
 
 	// create a mailbox to receive pkt from gen
 	mailbox gen2drv;		// Incoming pkt (GEN-->DRV)
@@ -13,23 +12,24 @@ class fifo_drv;
 		this.gen2drv = mbx;
 	endfunction
 
+	/*	TODO Remove task
 	task reset;		// On Reset, reset interface signals to default values
-		//wait(!fifo_vif.rstN);
-		wait(!`DRV_IF.rstN);
+		fifo_vif.rstN <= 0;
+
 		$display("\tDRIVER :: %0t ns \t reset task starting...\n ",$time);
+		
 		`DRV_IF.wr_en <= 0;
-		//`DRV_IF.rd_en <= 0;
 		`DRV_IF.data_in <= 'h0;
-		wait(fifo_vif.rstN);
+		
+		#100 fifo_vif.rstN <= 1;
 		$display("\tDRIVER :: %0t ns \t reset task finishing...\n ",$time);
 	endtask
-
+	*/
 	task run;		// This task puts generated pkts from gen to drv
 		forever begin
 			fifo_trans trans;
 
 			`DRV_IF.wr_en<=0;
-			//`DRV_IF.rd_en<=0;
 
 			gen2drv.get(trans);
 
@@ -43,16 +43,6 @@ class fifo_drv;
 
 				@(posedge fifo_vif.clk);
 			end
-			/*
-			if(trans.rd_en) begin
-				`PROBE_IF.rd_en <= trans.rd_en;
-				@(posedge fifo_vif.clk);
-				`PROBE_IF.rd_en <= 0;
-				@(posedge fifo_vif.clk);
-				trans.data_out <= `PROBE_IF.data_out;
-				$display("\tPROBE::%0t Reading data from fifo %0h",$time,trans.data_out);
-			end
-			*/
 
 		end
 	endtask

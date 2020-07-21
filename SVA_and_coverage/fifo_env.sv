@@ -1,15 +1,16 @@
-`include "fifo_trans.sv"
-`include "fifo_gen.sv"
-`include "fifo_drv.sv"
+`ifndef FIFO_ENV
+`define FIFO_ENV
 
-class fifo_env #(parameter FIFO_WIDTH = 32,FIFO_DEPTH=32);
+class fifo_env #(parameter FIFO_WIDTH = 32,parameter FIFO_DEPTH=32);
 	// Instantiate Driver and Generator classes
-	fifo_gen #(FIFO_WIDTH) gen;
+	fifo_gen # (.FIFO_WIDTH(FIFO_WIDTH),.FIFO_DEPTH(FIFO_DEPTH)) gen;
 	fifo_drv drv;
+	fifo_slave slv;
 
 	// Create a mailbox to send/receive data packets
 
 	mailbox gen2drv;
+	mailbox gen2slv_drv;
 	// Instantiate a virtual interface
 	virtual fifo_intf fifo_vif;
 
@@ -18,20 +19,23 @@ class fifo_env #(parameter FIFO_WIDTH = 32,FIFO_DEPTH=32);
 	function new(virtual fifo_intf vif);
 		this.fifo_vif = vif;
 		gen2drv = new();
+		gen2slv_drv = new();
 
 		// instantiate driver and generator
 		drv = new(vif,gen2drv);
-		gen = new(gen2drv);
+		gen = new(gen2drv,gen2slv_drv);
+		slv = new(vif,gen2slv_drv);
 	endfunction
 
 	task pre_test;			// Run the reset task
-		drv.reset();
+		//drv.reset();
 	endtask
 	
 	task test;
 		fork
 			gen.run();
 			drv.run();
+			slv.run();
 		join_any
 	endtask
 
@@ -42,10 +46,12 @@ class fifo_env #(parameter FIFO_WIDTH = 32,FIFO_DEPTH=32);
 	endtask
 
 	task run;
-		pre_test;
+		//pre_test;
 		test;
 		//post_test;
+		#1000
 		$finish;
 	endtask
 
 endclass
+`endif
