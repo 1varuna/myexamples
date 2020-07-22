@@ -1,4 +1,13 @@
-//`include "fifo_trans.sv"
+/*
+* File: fifo_gen.sv
+* Author: Varun Anand
+* Mentor: Varsha Anand, Verification Engineer
+* Description: Generator class which generates input transactions
+* and puts it onto a mailbox for the master and slave driver. 
+*/
+
+// Uncomment below for standalone compile
+//`include "fifo_trans.sv" 
 class fifo_gen #(parameter FIFO_WIDTH=32, parameter FIFO_DEPTH=2**5);
 
 	rand fifo_trans trans;			// Create an instance of trans class
@@ -20,7 +29,10 @@ class fifo_gen #(parameter FIFO_WIDTH=32, parameter FIFO_DEPTH=2**5);
 	task run;
 
 		int count = 0;
-		//int num_data = $urandom_range(63,255);
+		
+		//int num_data = $urandom_range(63,255);	// Commented:
+		//Externally driven through test.sv file
+
 		$display("No. of input data : %0d",num_data);	
 		repeat(num_data) begin
 			trans = new();

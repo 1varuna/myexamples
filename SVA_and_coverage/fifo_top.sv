@@ -1,3 +1,12 @@
+/*
+* File: fifo_top.sv
+* Author: Varun Anand
+* Mentor: Varsha Anand, Verification Engineer
+* Description: Fifo top file containing instantiations of 
+* interface, DUT, test. Also contains clock generation logic
+* and reset logic.
+*/
+
 // Include and Import RTL files
 //`include "fifo_rtl_pkg.sv"
 //import fifo_rtl_pkg::*;
@@ -5,6 +14,7 @@
 // Include and Import TB files
 //`include "fifo_tb_pkg.sv"
 //import fifo_tb_pkg::*;
+
 `include "test.sv"
 
 module fifo_top;		// Testbench top file

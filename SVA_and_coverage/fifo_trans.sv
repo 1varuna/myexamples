@@ -1,3 +1,10 @@
+/*
+* File: fifo_trans.sv
+* Author: Varun Anand
+* Mentor: Varsha Anand, Verification Engineer
+* Description: Transaction class containing randomizable data members
+* and constraints.
+*/
 class fifo_trans #(parameter FIFO_WIDTH=32);
 
 	`define S_DATA (2**((FIFO_WIDTH)/4))	// Defining range for small data values	

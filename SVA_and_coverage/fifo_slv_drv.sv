@@ -1,3 +1,11 @@
+/*
+* File: fifo_slv_drv.sv
+* Author: Varun Anand
+* Mentor: Varsha Anand, Verification Engineer
+* Description: Fifo Slave Driver class which helps
+* send a read request to read data from FIFO. 
+*/
+
 `ifndef FIFO_SLAVE
 `define FIFO_SLAVE
 

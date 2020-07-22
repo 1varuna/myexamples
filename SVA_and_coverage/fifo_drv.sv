@@ -1,3 +1,12 @@
+/*
+* File: fifo_drv.sv
+* Author: Varun Anand
+* Mentor: Varsha Anand, Verification Engineer
+* Description: Fifo Master Driver class which helps
+* send a write request and input data into DUT. 
+*/
+
+// Uncomment below for standalone compile
 //`include "fifo_trans.sv"
 //`include "fifo_intf.sv"
 class fifo_drv;
@@ -12,16 +21,6 @@ class fifo_drv;
 		this.gen2drv = mbx;
 	endfunction
 
-	/* TODO Check functionality or remove
-	task reset;
-		@(negedge fifo_vif.rstN);
-		begin
-			fifo_vif.wr_en <= 0;
-			fifo_vif.rd_en = 0;
-			fifo_vif.data_in = 0;
-		end
-	endtask
-	*/
 	task run;		// This task puts generated pkts from gen to drv
 		forever begin
 			fifo_trans trans;

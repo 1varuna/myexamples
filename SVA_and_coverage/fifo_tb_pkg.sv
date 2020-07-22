@@ -1,4 +1,12 @@
-// Package cannot include Interface file!!
+/*
+* File: fifo_tb_pkg.sv
+* Author: Varun Anand
+* Mentor: Varsha Anand, Verification Engineer
+* Description: Package containing all testbench files.
+	* Called in test.sv file, included in the fifo_top.sv file 
+*/
+
+// NOTE: Package cannot include Interface file!!
 package fifo_tb_pkg;
 
 	`include "defines.sv"		// Contains defines for FIFO DUT

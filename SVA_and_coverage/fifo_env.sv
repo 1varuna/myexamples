@@ -1,3 +1,12 @@
+/*
+* File: test.sv
+* Author: Varun Anand
+* Mentor: Varsha Anand, Verification Engineer
+* Description: Fifo env class which intantiates testench components
+* like generator, master driver, slave driver and launches parallel
+* threads for the run tasks in each of the classes.  
+*/
+
 `ifndef FIFO_ENV
 `define FIFO_ENV
 

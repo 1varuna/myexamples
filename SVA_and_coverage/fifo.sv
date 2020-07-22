@@ -1,3 +1,4 @@
+
 module fifo #(
 	parameter FIFO_WIDTH = 8,
 	parameter FIFO_DEPTH = 2**5)

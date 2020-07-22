@@ -1,3 +1,11 @@
+/*
+* File: test.sv
+* Author: Varun Anand
+* Mentor: Varsha Anand, Verification Engineer
+* Description: Test file which instantiates fifo_env class
+* and calls the run method, which starts the test.
+*/
+
 // Include and Import TB files
 `include "fifo_tb_pkg.sv"
 import fifo_tb_pkg::*;
