@@ -12,17 +12,14 @@ class fifo_drv;
 		this.gen2drv = mbx;
 	endfunction
 
-	/*	TODO Remove task
-	task reset;		// On Reset, reset interface signals to default values
-		fifo_vif.rstN <= 0;
-
-		$display("\tDRIVER :: %0t ns \t reset task starting...\n ",$time);
-		
-		`DRV_IF.wr_en <= 0;
-		`DRV_IF.data_in <= 'h0;
-		
-		#100 fifo_vif.rstN <= 1;
-		$display("\tDRIVER :: %0t ns \t reset task finishing...\n ",$time);
+	/* TODO Check functionality or remove
+	task reset;
+		@(negedge fifo_vif.rstN);
+		begin
+			fifo_vif.wr_en <= 0;
+			fifo_vif.rd_en = 0;
+			fifo_vif.data_in = 0;
+		end
 	endtask
 	*/
 	task run;		// This task puts generated pkts from gen to drv
@@ -32,16 +29,19 @@ class fifo_drv;
 			`DRV_IF.wr_en<=0;
 
 			gen2drv.get(trans);
+			$display("\tMASTER DRIVER::run() Transaction info FROM GEN: %0t ns wr_en = %0d, rd_en = %0d, data_in = %0d\n",$time,trans.wr_en,trans.rd_en,trans.data_in);
 
 			$display("\tDRIVER::%0t Getting data packets from Generator",$time);
 
 			@(posedge fifo_vif.clk);
 			if(trans.wr_en)
 			begin
+			$display("\tMASTER DRIVER::run() Transaction info INTO DUT: %0t ns wr_en = %0d, rd_en = %0d, data_in = %0d\n",$time,trans.wr_en,trans.rd_en,trans.data_in);
 				`DRV_IF.wr_en <= trans.wr_en;
 				`DRV_IF.data_in <= trans.data_in;
 
 				@(posedge fifo_vif.clk);
+				`DRV_IF.wr_en<=0;
 			end
 
 		end

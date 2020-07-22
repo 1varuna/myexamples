@@ -3,8 +3,8 @@
 module fifo_assertions #(parameter FIFO_WIDTH=32) (
 	input wire clk,
 	input wire rstN,
-	input wire write_en,
-	input wire read_en,
+	input wire wr_en,
+	input wire rd_en,
 	input wire [FIFO_WIDTH-1:0] data_in,
 	input reg [FIFO_WIDTH-1:0] data_out,
 	output wire empty,
@@ -15,10 +15,10 @@ module fifo_assertions #(parameter FIFO_WIDTH=32) (
 	// |=> Check after 1 clock cycle : Non-Overlapping implication
 	
 	// Reset condition
-	a_reset:	assert property (@(posedge clk) !rstN |-> (write_en==1'b0)&&(read_en==0)&&(data_in=='h0));
+	a_reset:	assert property (@(posedge clk) !rstN |-> (wr_en==1'b0)&&(rd_en==0)&&(data_in=='h0));
 	
 	// Mutual exclusion condition for wr and rd enable
-	a_wr_rd_enable:	assert property (@(posedge clk) disable iff (!rstN) !(write_en&&read_en));
+	a_wr_rd_enable:	assert property (@(posedge clk) disable iff (!rstN) !(wr_en&&rd_en));
 
 	/*	TODO : COMPLETE LATER
 	* More assertions to be added:
@@ -29,8 +29,8 @@ module fifo_assertions #(parameter FIFO_WIDTH=32) (
 		* Invalid write after full - ADDED
 		*
 	*/
-       a_inv_rd_empty:	assert property (@(posedge clk) disable iff (!rstN) empty |-> !read_en);
+       a_inv_rd_empty:	assert property (@(posedge clk) disable iff (!rstN) empty |-> !rd_en);
        
-       a_inv_wr_full:	assert property (@(posedge clk) disable iff (!rstN) full |-> !write_en);
+       a_inv_wr_full:	assert property (@(posedge clk) disable iff (!rstN) full |-> !wr_en);
 
 endmodule

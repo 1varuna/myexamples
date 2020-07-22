@@ -17,6 +17,7 @@ class fifo_trans #(parameter FIFO_WIDTH=32);
 		wr_en!=rd_en;		// Mutex condition for read write
 	}
 
+/*	
 	constraint wr_en_c {
 	wr_en dist {1:=80,0:=20};	// constraint on write enable
 	}	
@@ -24,19 +25,21 @@ class fifo_trans #(parameter FIFO_WIDTH=32);
 	constraint rd_en_c {
 	rd_en dist {1:=20,0:=80};	// constraint on write enable
 	}
+*/	
 
 	// TODO Check why data_in constraint does not work
 	
-	/*
+
+	/*	
 	constraint data_in_c{		// constraint on data generation
-		data_in inside {[`M_DATA:`L_DATA-1]};
-		/*
+		//data_in inside {[`M_DATA:`L_DATA-1]};
+		data_in dist
 		{
 			[1000:`S_DATA-1] :=40,
 			[`S_DATA:`M_DATA-1] :=40,
-			[`M_DATA-1:`L_DATA] :=20
+			[`M_DATA:`L_DATA] :=20
 		};
-		*/
+		
 		/*
 		data_in dist {
 	[0:(2<<FIFO_WIDTH)/2] := 50,

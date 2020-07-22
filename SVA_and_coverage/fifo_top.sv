@@ -15,21 +15,22 @@ module fifo_top;		// Testbench top file
 		#5 clk = ~clk;
 	end
 	
-	bit rstN;
+	
+	wire wr_en;
+	wire rd_en;
+	wire [`DEF_FIFO_WIDTH-1:0] data_in;
+	wire [`DEF_FIFO_WIDTH-1:0] data_out;
+	wire empty;
+	wire full;	
+
+	logic rstN;
+	
 	initial begin
 		rstN = 0;
 		#100 rstN = 1;
 	end
-	
-	bit write_en;
-	bit read_en;
-	bit [`DEF_FIFO_WIDTH-1:0] data_in;
-	bit [`DEF_FIFO_WIDTH-1:0] data_out;
-	bit empty;
-	bit full;	
-	
-	// instantiate interface to connect DUT and test
-	//fifo_intf intf(clk,rstN);
+		
+	// instantiate interface 
 	fifo_intf 	#(.FIFO_WIDTH(`DEF_FIFO_WIDTH),
 			.FIFO_DEPTH(`DEF_FIFO_DEPTH))
 			intf 	
@@ -42,22 +43,27 @@ module fifo_top;		// Testbench top file
 				.full(full),			// fifo full
 				.data_out(data_out)		// Output data
 			);
-
-	test t1(intf);
-
+	
+	
 	// Connect DUT and interface signals
 	fifo 	 	#(.FIFO_WIDTH(`DEF_FIFO_WIDTH),
 			.FIFO_DEPTH(`DEF_FIFO_DEPTH))
 			DUT	(
 			.clk(intf.clk),
 			.rstN(intf.rstN),
-			.write_en(intf.wr_en),
-			.read_en(intf.rd_en),
+			.wr_en(intf.wr_en),
+			.rd_en(intf.rd_en),
 			.data_in(intf.data_in),
 			.data_out(intf.data_out),
 			.empty(intf.empty),
 			.full(intf.full)
-			);
+			);	
+			
+	
+
+	test t1(intf);
+
+	
 
 	initial begin
 		$dumpfile("dump.wlf");

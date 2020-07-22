@@ -13,7 +13,7 @@
 `define L_PKT `DEF_FIFO_DEPTH
 
 module fifo_coverage();
-	logic write_en, read_en;
+	logic wr_en, rd_en;
 	logic [`DEF_FIFO_WIDTH-1:0] data_in;
 	logic full, empty;
 	logic clk,rstN;
