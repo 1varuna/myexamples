@@ -1,13 +1,17 @@
 # Commands for ModelSim/Questa
-all:	compile sim run quit
+all:	compile start_sim add_wave run quit
 
 
 compile:
 	vlog -sv fifo.sv fifo_intf.sv fifo_top.sv	
 #vlog -sv fifo.sv fifo_intf.sv fifo_env.sv test.sv fifo_top.sv
 
-sim:
+start_sim:
 	vsim -voptargs=+acc work.fifo_top -novopt
+
+add_wave:
+	do waves.do
+
 
 run:
 	run -all
