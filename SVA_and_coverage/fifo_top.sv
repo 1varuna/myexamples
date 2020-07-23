@@ -15,7 +15,8 @@
 //`include "fifo_tb_pkg.sv"
 //import fifo_tb_pkg::*;
 
-`include "test.sv"
+`include "fifo_assertions.sv"
+`include "test_suite.sv"
 
 module fifo_top;		// Testbench top file
 	// Clock gen logic
@@ -68,10 +69,20 @@ module fifo_top;		// Testbench top file
 			.empty(intf.empty),
 			.full(intf.full)
 			);	
-			
-	
 
-	test t1(intf);
+	/*			
+	bind fifo fifo_assertions b_assertions(
+		.clk(clk),
+		.rstN(rstN),
+		.data_out(data_out)
+	);	
+	*/
+	
+       	bind fifo fifo_assertions b_assertions(.*);	// Connecting DUT signals with assertion module signals
+
+	//test t1(intf);
+	write_only_test t1(intf);
+	//write_read_test t1(intf);
 
 	
 

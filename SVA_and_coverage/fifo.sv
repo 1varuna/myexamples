@@ -52,7 +52,12 @@ module fifo #(
 				memory[write_ptr] = data_in;
 				tmp_empty <= 0;		// fifo no longer emnpty
 				// increment write pointer
+				if(write_ptr<=FIFO_DEPTH)
 				write_ptr = (write_ptr+1)%FIFO_DEPTH;
+				else begin
+					$warning("\t DUT:: %0t OVERFLOW! Attempting write on a FULL fifo!!\n",$time);
+					write_ptr = 0;						// Reset the write pointer
+				end
 				if(read_ptr==write_ptr)		// check for fifo FULL condition
 				begin
 					tmp_full <= 1'b1;

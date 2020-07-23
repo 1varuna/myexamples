@@ -19,7 +19,6 @@ class fifo_trans #(parameter FIFO_WIDTH=32);
 	//function new(mailbox mbx);
 	//	this.mbx_out = mbx;
 	//endfunction
-
 	constraint wr_rd {
 		wr_en!=rd_en;		// Mutex condition for read write
 	}

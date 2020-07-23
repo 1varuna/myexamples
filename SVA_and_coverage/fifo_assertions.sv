@@ -1,3 +1,4 @@
+
 // Defining assertions for FIFO DUT
 
 module fifo_assertions #(parameter FIFO_WIDTH=32) (
@@ -7,15 +8,17 @@ module fifo_assertions #(parameter FIFO_WIDTH=32) (
 	input wire rd_en,
 	input wire [FIFO_WIDTH-1:0] data_in,
 	input reg [FIFO_WIDTH-1:0] data_out,
-	output wire empty,
-	output wire full
+	input wire empty,
+	input wire full,
+	input integer write_ptr,
+	input integer read_ptr
 	);
-
+	
 	// |-> Check immediately : Overlapping implication
 	// |=> Check after 1 clock cycle : Non-Overlapping implication
 	
 	// Reset condition
-	a_reset:	assert property (@(posedge clk) !rstN |-> (wr_en==1'b0)&&(rd_en==0)&&(data_in=='h0));
+	a_reset:	assert property (@(posedge clk) !rstN |-> (data_out=='h0));
 	
 	// Mutual exclusion condition for wr and rd enable
 	a_wr_rd_enable:	assert property (@(posedge clk) disable iff (!rstN) !(wr_en&&rd_en));
@@ -29,8 +32,10 @@ module fifo_assertions #(parameter FIFO_WIDTH=32) (
 		* Invalid write after full - ADDED
 		*
 	*/
-       a_inv_rd_empty:	assert property (@(posedge clk) disable iff (!rstN) empty |-> !rd_en);
+       a_invalid_rd_empty:	assert property (@(posedge clk) disable iff (!rstN) empty |-> read_ptr==$past(read_ptr));
        
-       a_inv_wr_full:	assert property (@(posedge clk) disable iff (!rstN) full |-> !wr_en);
+       a_invalid_wr_full:	assert property (@(posedge clk) disable iff (!rstN) full |-> write_ptr==$past(write_ptr));
 
+       a_empty_ptr:		assert property (@(posedge clk) disable iff (!rstN) empty |-> (write_ptr==0&&read_ptr==0))
+       				else $error("\t FIFO_ASSERTIONS:: Read and Write address not pointing to start address, when FIFO is empty");
 endmodule
