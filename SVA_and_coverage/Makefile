@@ -7,7 +7,7 @@ compile:
 #vlog -sv fifo.sv fifo_intf.sv fifo_env.sv test.sv fifo_top.sv
 
 start_sim:
-	vsim -voptargs=+acc work.fifo_top -novopt
+	vsim -voptargs=+acc work.fifo_top -novopt +test_name="write_only"	# test_name can be changed accordingly
 
 add_wave:
 	do waves.do
