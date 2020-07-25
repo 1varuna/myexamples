@@ -14,6 +14,9 @@ package fifo_tb_pkg;
 	`include "fifo_gen.sv"
 	`include "fifo_drv.sv"
 	`include "fifo_slv_drv.sv"
+	`include "fifo_input_mon.sv"
+	`include "fifo_output_mon.sv"
+	`include "fifo_sb.sv"
 	`include "fifo_env.sv"
 	
 	/*

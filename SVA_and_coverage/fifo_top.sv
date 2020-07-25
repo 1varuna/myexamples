@@ -70,23 +70,22 @@ module fifo_top;		// Testbench top file
 			.full(intf.full)
 			);	
 
-	/*			
-	bind fifo fifo_assertions b_assertions(
-		.clk(clk),
-		.rstN(rstN),
-		.data_out(data_out)
-	);	
-	*/
-	
        	bind fifo fifo_assertions b_assertions(.*);	// Connecting DUT signals with assertion module signals
 
-	//test t1(intf);
-	write_only_test t1(intf);
-	//write_read_test t1(intf);
+	string test_name;
 
+	initial begin			// Initial block to choose the right test to instantiate
+		if ($value$plusargs ("test=%s", test_name))
+      		$display ("Chosen test : %s", test_name);
+	end
 	
+	// Uncomment appropriate test to be run
+	
+	//write_only_test t1(intf);
+	write_read_test t1(intf);
+	//test t1(intf);
 
-	initial begin
+	initial begin			// for dumping signals
 		$dumpfile("dump.wlf");
 		$dumpvars;
 	end

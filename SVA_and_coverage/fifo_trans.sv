@@ -13,7 +13,8 @@ class fifo_trans #(parameter FIFO_WIDTH=32);
 
 	rand bit [FIFO_WIDTH-1:0] data_in;
 	rand bit wr_en, rd_en;
-	logic [FIFO_WIDTH-1:0] data_out;	// To observe output at FIFO slave driver	
+	logic [FIFO_WIDTH-1:0] data_out;	// To observe output at FIFO slave driver
+	logic full,empty;	
 	//mailbox mbx_out;
 
 	//function new(mailbox mbx);
