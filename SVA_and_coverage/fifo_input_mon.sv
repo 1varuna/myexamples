@@ -28,12 +28,24 @@ class fifo_input_mon;
 			trans = new();
 
 			@(posedge fifo_vif.clk);
-			trans.wr_en = fifo_vif.wr_en;
-			trans.data_in = fifo_vif.data_in;
-			trans.rd_en = fifo_vif.rd_en;
-			$display("\tINPUT MONITOR::sample() : Transaction info: wr_en = %0d, rd_en = %0d, data_in=%0d\n",trans.wr_en,trans.rd_en,trans.data_in);
-			@(posedge fifo_vif.clk);
-			in_mon2sb.put(trans);
+			if (!fifo_vif.rstN) begin
+				fork
+					begin
+						if (fifo_vif.wr_en == 1)
+							trans.wr_en = fifo_vif.wr_en;
+							trans.data_in = fifo_vif.data_in;
+						$display("\tINPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = %0d, rd_en = %0d, data_in=%0d\n",trans.wr_en,trans.rd_en,trans.data_in);
+							in_mon2sb.put(trans);
+					end
+					begin
+						if (fifo_vif.rd_en == 1)
+							trans.rd_en = fifo_vif.rd_en;
+						$display("\tINPUT MONITOR::sample() : Read detected, updating mailbox to send to scoreboard.Transaction info: wr_en = %0d, rd_en = %0d, data_in=%0d\n",trans.wr_en,trans.rd_en,trans.data_in);
+							in_mon2sb.put(trans);
+					end
+				join_none
+			end
+			
 		end
 	endtask
 endclass
