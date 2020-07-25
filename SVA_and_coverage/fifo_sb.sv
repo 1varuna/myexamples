@@ -14,13 +14,11 @@
 	       // Initialize counter variable to keep 
 	       // track of transactions processed
 
-	       integer trans_count;
+	       static int trans_count = 0;
 
-	       virtual interface fifo_intf vif;
 
 	       // SB Constructor
-	       function new(virtual fifo_intf intf,mailbox in_mon2sb,mailbox out_mon2sb);
-		       this.vif = intf;
+	       function new(mailbox in_mon2sb,mailbox out_mon2sb);
 		       this.in_mon2sb = in_mon2sb;
 		       this.out_mon2sb = out_mon2sb;
 	       endfunction
@@ -41,35 +39,42 @@
 	      bit full_q[$];	// Queue to hold full signal values
 	      bit empty_q[$];	// Queue to hold empty signal values
 	      bit wr_en_q[$];
-	      bit rd_en_in_q[$];
-	      bit rd_en_out_q[$];
+	      bit rd_en_q[$];
 
 	      // Temporary output queues
 	      bit temp_wr_en;
-	      bit temp_rd_en_in;
-	      bit temp_rd_en_out;
+	      bit temp_rd_en;
 	      bit temp_full;
 	      bit temp_empty;
 
 	      // Declare SB events
-	      event data_in_ev;			// To signal when an input write and data arrive
+	      event data_in_ev;				// To signal when an input write and data arrive
 	      event data_out_ev;			// To signal when an output read and data arrive
+
+	      event read_rcv_ev;			// Check if read has been received
+	      event full_ev;				// Check if FULL has been observed
+	      event empty_ev;				// Check if EMPTY has been observed
 
 	      task in_queue;
 		      fifo_trans in_trans;		// Incoming trans from input monitor
 		      in_trans = new();
 		      $display("\t SCOREBOARD:: Inside in_queue() \n");
 		      forever begin
-			      @(posedge vif.clk);
 			      in_mon2sb.get(in_trans);
 			      $display("\tSCOREBOARD::in_queue() : Transaction info: wr_en = %0d, rd_en = %0d, data_in=%0d\n",in_trans.wr_en,in_trans.rd_en,in_trans.data_in);
-			      if(vif.rstN)
-			      begin
-				      wr_en_q.push_back(in_trans.wr_en);
-				      in_stream_q.push_back(in_trans.data_in);
-				      ->data_in_ev;
-				      rd_en_in_q.push_back(in_trans.rd_en);
-			      end
+			      if(in_trans.wr_en==1) begin
+				      	trans_count++;
+				      	wr_en_q.push_back(in_trans.wr_en);
+			      		in_stream_q.push_back(in_trans.data_in);
+			      		//$display("\t SB::in_queue() : Waiting for data_in event...\n");
+			      		->data_in_ev;
+			      		$display("\t SB::in_queue() : SENT data_in event...\n");
+				end
+				if(in_trans.rd_en==1) begin
+				      	trans_count--;
+					rd_en_q.push_back(in_trans.rd_en);
+					->read_rcv_ev;
+				end
 		      end
 
 	      endtask
@@ -79,59 +84,75 @@
 		      out_trans = new();
 		      $display("\t SCOREBOARD:: Inside out_queue() \n");
 		      forever begin
-			      @(posedge vif.clk);
 			      out_mon2sb.get(out_trans);
 			      $display("\tSCOREBOARD::out_queue() : Transaction info: wr_en = %0d, rd_en = %0d, data_out=%0d, full : %0d, empty: %0d\n",out_trans.wr_en,out_trans.rd_en,out_trans.data_out,out_trans.full,out_trans.empty);
-			      if(vif.rstN)	begin
-				      rd_en_out_q.push_back(out_trans.rd_en);	// forcing wr_en to 0
-				      out_stream_q.push_back(out_trans.data_out);	// forcing wr_en to 0
-				      ->data_out_ev;
-				      full_q.push_back(out_trans.full);
-				      empty_q.push_back(out_trans.empty);
-			      end
+			      if(out_trans.full==1'b1) begin
+			      		full_q.push_back(out_trans.full);
+					->full_ev;
+				end
+
+				if(out_trans.empty==1'b1) begin
+			      		empty_q.push_back(out_trans.empty);
+					->empty_ev;
+				end
+
+				if(out_trans.data_out!='hx) begin
+			      		out_stream_q.push_back(out_trans.data_out);	// forcing wr_en to 0
+			      		->data_out_ev;
+			      		$display("\t SB::out_queue() : SENT data_out event...\n");
+				end
 		      end
 	      endtask
 
-	      task main_check;		// main task to compare input and output data
-		      trans_count = 0;
-
+	      task chk_data_out;
 		      forever begin
-			      @(data_in_ev or data_out_ev);
-		      begin
-			      temp_wr_en = wr_en_q.pop_front();
-			      temp_in_data = in_stream_q.pop_front();
-			      temp_rd_en_in = rd_en_in_q.pop_front();
-			      temp_rd_en_out = rd_en_out_q.pop_front();
-			      temp_out_data = out_stream_q.pop_front();
-			      temp_full = full_q.pop_front();
-			      temp_empty = empty_q.pop_front();
-
-			      if((temp_rd_en_in==1'b1)&&(temp_rd_en_out==1'b1))
-			      begin
-				      if(temp_in_data!=temp_out_data)
-					      $error("\t SCOREBOARD::main_check() : Data Mismatch!\n");
-				      else
-					      trans_count++;		
-			      end
-
-			      if(trans_count==FIFO_DEPTH)
-			      begin
-				      if(temp_full==1'b1)
-					      $display("\t SCOREBOARD::main_check() : FIFO FULL correctly received\n");
-				      else
-					      $error("\t SCOREBOARD::main_check() : FIFO FULL not received\n");
-			      end
+			      	@(read_rcv_ev or data_out_ev) begin
+					if((in_stream_q.size()!=0) && (out_stream_q.size()!=0)) begin
+			      			temp_in_data = in_stream_q.pop_front();
+			     			temp_out_data = out_stream_q.pop_front();
+						$display("\t SCOREBOARD::chk_data_out() : DATA CHECKING...");
+						if(temp_in_data!=temp_out_data)
+							$error("\t SCOREBOARD::chk_data_out() : Data Mismatch! \n\t Input Data: %0d is not equal to Output Data: %0d \n",temp_in_data,temp_out_data);
+					end
+				end
 		      end
-	      end
-      endtask
+	      endtask
+
+	      task chk_full;
+		      bit exp_full;		// EXP full from TB
+		      forever begin
+			@(full_ev) begin
+				if(full_q.size()!=0) begin
+				temp_full = full_q.pop_front();		// RTL full signal				
+				exp_full = (trans_count==FIFO_DEPTH);
+				if(temp_full!=exp_full)
+					$error("\t SCOREBOARD::chk_full() : FAILED \n EXP: %0d \t RTL : %0d\n",exp_full,temp_full);
+				end
+			end
+		      	end
+	      endtask
+	      
+	      task chk_empty;
+		      bit exp_empty;		// EXP empty from TB
+		      forever begin
+			@(empty_ev) begin
+				if(empty_q.size()!=0) begin
+				temp_empty = empty_q.pop_front();		// RTL empty signal				
+				exp_empty = (trans_count==0);
+				if(temp_empty!=exp_empty)
+					$error("\t SCOREBOARD::chk_empty() : FAILED \n EXP: %0d \t RTL : %0d\n",exp_empty,temp_empty);
+				end
+			end
+		      	end
+	      endtask
 
       task run;
-	      forever begin
-		      fork
-			      in_queue;
-			      out_queue;
-			      main_check;
-		      join_none
-	      end
+		fork
+		      in_queue;
+		      out_queue;
+		      chk_data_out;
+		      chk_full;
+		      chk_empty;
+		join_none
       endtask
 endclass
