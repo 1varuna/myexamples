@@ -82,8 +82,8 @@ module fifo_top;		// Testbench top file
 	// Uncomment appropriate test to be run
 	
 	//write_only_test t1(intf);
-	write_read_test t1(intf);
-	//test t1(intf);
+	//write_read_test t1(intf);
+	test t1(intf);
 
 	initial begin			// for dumping signals
 		$dumpfile("dump.wlf");

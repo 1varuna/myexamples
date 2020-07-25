@@ -33,6 +33,8 @@ class fifo_env #(parameter FIFO_WIDTH = 32,parameter FIFO_DEPTH=32);
 
 	function new(virtual fifo_intf vif);
 		this.fifo_vif = vif;
+		
+		/* TODO:Check if necessary to use new() on mailbox*/
 		gen2drv = new();
 		gen2slv_drv = new();
 		in_mon2sb = new();	
@@ -45,7 +47,7 @@ class fifo_env #(parameter FIFO_WIDTH = 32,parameter FIFO_DEPTH=32);
 		slv_drv = new(vif,gen2slv_drv);
 		in_mon = new(vif,in_mon2sb);
 		out_mon = new(vif,out_mon2sb);
-		sb = new(vif,in_mon2sb,out_mon2sb);
+		sb = new(in_mon2sb,out_mon2sb);
 
 	endfunction
 
