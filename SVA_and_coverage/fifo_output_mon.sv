@@ -26,15 +26,17 @@ class fifo_output_mon;
 		forever begin
 			fifo_trans trans;
 			trans = new();
-
+		
 			@(posedge fifo_vif.clk);
-			trans.rd_en = fifo_vif.rd_en;
-			trans.data_out = fifo_vif.data_out;
-			trans.full = fifo_vif.full;
-			trans.empty = fifo_vif.empty;
-			$display("\tOUTPUT MONITOR::sample() : Transaction info: wr_en = %0d, rd_en = %0d, data_out=%0d, full : %0d, empty: %0d\n",trans.wr_en,trans.rd_en,trans.data_out,trans.full,trans.empty);
-			@(posedge fifo_vif.clk);
-			out_mon2sb.put(trans);
+			if (fifo_vif.rstN) begin
+					if ((fifo_vif.full==1'b1) || (fifo_vif.empty==1'b1)||(fifo_vif.data_out!='hx)) begin
+						trans.full = fifo_vif.full;
+						trans.empty = fifo_vif.empty;
+						trans.data_out = fifo_vif.data_out;
+						$display("\tOUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = %0d, FULL = %0d, data_out = %0d\n",trans.empty,trans.full,trans.data_out);
+						out_mon2sb.put(trans);
+					end
+			end
 		end
 	endtask
 endclass
