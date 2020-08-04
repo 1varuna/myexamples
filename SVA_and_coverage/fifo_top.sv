@@ -15,15 +15,19 @@
 //`include "fifo_tb_pkg.sv"
 //import fifo_tb_pkg::*;
 
+`timescale 1ns/1ns
 `include "fifo_assertions.sv"
+import uvm_pkg::*;
 `include "test_suite.sv"
 
 module fifo_top;		// Testbench top file
 	// Clock gen logic
 	bit clk;
+	int clk_delay = 5;
 	
+	int clk_period = clk_delay*2;
 	always begin
-		#5 clk = ~clk;
+		#clk_delay clk = ~clk;
 	end
 	
 	
@@ -40,7 +44,20 @@ module fifo_top;		// Testbench top file
 		rstN = 0;
 		#100 rstN = 1;
 	end
-		
+	
+	// include assertion for clock period
+	property clk_period_p (int clk_period);
+		time current_time;
+		@(posedge clk) disable iff(!rstN)
+		('1, current_time=$time) |=> (clk_period == ($time-current_time));
+	endproperty: clk_period_p
+
+	a_clk_period: assert property (@(posedge clk) clk_period_p(clk_period))
+			$display("\t FIFO_TOP:: clk period assertion passed at %t\n",$time);
+			else
+			$error("\t FIFO_TOP:: clk period assertion FAILED at %t\n",$time);
+	
+
 	// instantiate interface 
 	fifo_intf 	#(.FIFO_WIDTH(`DEF_FIFO_WIDTH),
 			.FIFO_DEPTH(`DEF_FIFO_DEPTH))

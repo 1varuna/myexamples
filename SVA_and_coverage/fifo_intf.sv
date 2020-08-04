@@ -6,7 +6,7 @@
 * specific to classes they interface with, and define their directions
 * using modports.
 */
-
+`timescale 1ns/1ns
 interface fifo_intf #(parameter FIFO_WIDTH=32, parameter FIFO_DEPTH=(2**5))(
 	input logic clk,				// input clock
 	input logic rstN,				//active low reset
