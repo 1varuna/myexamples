@@ -89,18 +89,20 @@
 			      if(out_trans.full==1'b1) begin
 			      		full_q.push_back(out_trans.full);
 					->full_ev;
+			      		$display("\t SB::out_queue() : SENT full event...\n");
 				end
 
 				if(out_trans.empty==1'b1) begin
 			      		empty_q.push_back(out_trans.empty);
 					->empty_ev;
+			      		$display("\t SB::out_queue() : SENT empty event...\n");
 				end
 
-				if(out_trans.data_out!='hx) begin
+				//if(out_trans.data_out!='h0) begin
 			      		out_stream_q.push_back(out_trans.data_out);	// forcing wr_en to 0
 			      		->data_out_ev;
 			      		$display("\t SB::out_queue() : SENT data_out event...\n");
-				end
+				//end
 		      end
 	      endtask
 
@@ -113,6 +115,9 @@
 						$display("\t SCOREBOARD::chk_data_out() : DATA CHECKING...");
 						if(temp_in_data!=temp_out_data)
 							$error("\t SCOREBOARD::chk_data_out() : Data Mismatch! \n\t Input Data: %0d is not equal to Output Data: %0d \n",temp_in_data,temp_out_data);
+						else
+							$display("\t SCOREBOARD::chk_data_out() : Data Matched! \n\t Input Data: %0d , Output Data: %0d \n",temp_in_data,temp_out_data);
+
 					end
 				end
 		      end
@@ -126,8 +131,11 @@
 				temp_full = full_q.pop_front();		// RTL full signal				
 				exp_full = (trans_count==FIFO_DEPTH);
 				if(temp_full!=exp_full)
-					$error("\t SCOREBOARD::chk_full() : FAILED \n EXP: %0d \t RTL : %0d\n",exp_full,temp_full);
+					$error("\t SCOREBOARD::chk_full() At %t : FAILED \n \t EXP: %0d \t RTL : %0d\n",$time,exp_full,temp_full);
+				else
+					$display("\t SCOREBOARD::chk_full() At %t : PASSED \n \t EXP: %0d \t RTL : %0d\n",$time,exp_full,temp_full);
 				end
+
 			end
 		      	end
 	      endtask
@@ -140,8 +148,11 @@
 				temp_empty = empty_q.pop_front();		// RTL empty signal				
 				exp_empty = (trans_count==0);
 				if(temp_empty!=exp_empty)
-					$error("\t SCOREBOARD::chk_empty() : FAILED \n EXP: %0d \t RTL : %0d\n",exp_empty,temp_empty);
+					$error("\t SCOREBOARD::chk_empty() At %t : FAILED \n \t EXP: %0d \t RTL : %0d\n",$time,exp_empty,temp_empty);
+				else
+					$display("\t SCOREBOARD::chk_empty() At %t : PASSED \n \t EXP: %0d \t RTL : %0d\n",$time,exp_empty,temp_empty);
 				end
+
 			end
 		      	end
 	      endtask

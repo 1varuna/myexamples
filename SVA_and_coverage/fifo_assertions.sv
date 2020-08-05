@@ -36,6 +36,8 @@ module fifo_assertions #(parameter FIFO_WIDTH=32) (
        
        a_invalid_wr_full:	assert property (@(posedge clk) disable iff (!rstN) full |-> write_ptr==$past(write_ptr));
 
+       /*
        a_empty_ptr:		assert property (@(posedge clk) disable iff (!rstN) empty |-> (write_ptr==0&&read_ptr==0))
        				else $error("\t FIFO_ASSERTIONS:: Read and Write address not pointing to start address, when FIFO is empty");
+	*/
 endmodule

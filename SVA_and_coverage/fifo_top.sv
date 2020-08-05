@@ -17,7 +17,7 @@
 
 `timescale 1ns/1ns
 `include "fifo_assertions.sv"
-import uvm_pkg::*;
+//import uvm_pkg::*;
 `include "test_suite.sv"
 
 module fifo_top;		// Testbench top file
@@ -53,7 +53,7 @@ module fifo_top;		// Testbench top file
 	endproperty: clk_period_p
 
 	a_clk_period: assert property (@(posedge clk) clk_period_p(clk_period))
-			$display("\t FIFO_TOP:: clk period assertion passed at %t\n",$time);
+			//$display("\t FIFO_TOP:: clk period assertion passed at %t\n",$time);
 			else
 			$error("\t FIFO_TOP:: clk period assertion FAILED at %t\n",$time);
 	
@@ -98,9 +98,9 @@ module fifo_top;		// Testbench top file
 	
 	// Uncomment appropriate test to be run
 	
-	//write_only_test t1(intf);
+	write_only_test t1(intf);
 	//write_read_test t1(intf);
-	test t1(intf);
+	//test t1(intf);
 
 	initial begin			// for dumping signals
 		$dumpfile("dump.wlf");
