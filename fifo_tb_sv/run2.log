@@ -1,0 +1,1115 @@
+# vsim -voptargs="+acc" work.fifo_top -novopt -l run2.log 
+# Start time: 12:23:26 on Aug 05,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing F:/Programming/Verilog programs/SVA_and_coverage/work.fifo_top
+# Refreshing F:/Programming/Verilog programs/SVA_and_coverage/work.fifo_top_sv_unit
+# Refreshing F:/Programming/Verilog programs/SVA_and_coverage/work.fifo_tb_pkg
+# Loading sv_std.std
+# Loading work.fifo_tb_pkg
+# Loading work.fifo_top_sv_unit
+# Loading work.fifo_top
+# Refreshing F:/Programming/Verilog programs/SVA_and_coverage/work.fifo_intf
+# Loading work.fifo_intf
+# Refreshing F:/Programming/Verilog programs/SVA_and_coverage/work.fifo
+# Loading work.fifo
+# Refreshing F:/Programming/Verilog programs/SVA_and_coverage/work.write_only_test
+# Loading work.write_only_test
+# Refreshing F:/Programming/Verilog programs/SVA_and_coverage/work.fifo_assertions
+# Loading work.fifo_assertions
+do waves.do
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: varun  Hostname: VARSHAANAND  ProcessID: 4020
+# 
+#           Attempting to use alternate WLF file "./wlftabekbv".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftabekbv
+# 
+run -all
+# 	 Inside fifo.sv:: Reset...
+# No. of input data : 37
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 1 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 2245239803
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 2 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 2411456456
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 3 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 1677941082
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 4 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 2407411035
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 5 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 561517334
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 6 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 1642144801
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 7 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 961602194
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 8 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 1945621837
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 9 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 313992614
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 10 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 3005464201
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 11 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 242771957
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 12 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 3588713208
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 13 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 645539216
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 14 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 1139215567
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 15 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 797552427
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 16 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 1297049077
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 17 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 1763056735
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 18 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 902479165
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 19 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 3653358867
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 20 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 2895809543
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 21 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 932061454
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 22 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 876922993
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 23 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 2439490946
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 24 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 3105396269
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 25 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 2247616878
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 26 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 564734261
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 27 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 2586241988
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 28 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 1798309486
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 29 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 899201310
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 30 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 2813197575
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 31 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 1202244326
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 32 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 3161757973
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 33 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 934488610
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 34 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 3880765502
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 35 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 1097781804
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 36 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 348363167
+# 
+# 	GEN::run() : 0ns New data_generated 	 Data item no. 37 out of 37
+# 
+# 	GEN::run() : 0ns Putting packets on Master Driver and Slave Driver
+# 
+# 	GEN::run() Transaction info: 0ns wr_en = 1, rd_en = 0, data_in = 3423652137
+# 
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 0 ns wr_en = 1, rd_en = 0, data_in = 2245239803
+# 
+# 	DRIVER::0 Getting data packets from Generator
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 0 ns wr_en = 1, rd_en = 0, data_in = 2245239803
+# 
+# 	SLAVE::0 Reading data from FIFO output
+# 	 SCOREBOARD:: Inside in_queue() 
+# 
+# 	 SCOREBOARD:: Inside out_queue() 
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 5 ns wr_en = 1, rd_en = 0, data_in = 2245239803
+# 
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 5 ns wr_en = 1, rd_en = 0, data_in = 2411456456
+# 
+# 	SLAVE::5 Reading data from FIFO output
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 15 ns wr_en = 1, rd_en = 0, data_in = 2411456456
+# 
+# 	DRIVER::15 Getting data packets from Generator
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 15 ns wr_en = 1, rd_en = 0, data_in = 1677941082
+# 
+# 	SLAVE::15 Reading data from FIFO output
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 25 ns wr_en = 1, rd_en = 0, data_in = 2411456456
+# 
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 25 ns wr_en = 1, rd_en = 0, data_in = 2407411035
+# 
+# 	SLAVE::25 Reading data from FIFO output
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 35 ns wr_en = 1, rd_en = 0, data_in = 1677941082
+# 
+# 	DRIVER::35 Getting data packets from Generator
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 35 ns wr_en = 1, rd_en = 0, data_in = 561517334
+# 
+# 	SLAVE::35 Reading data from FIFO output
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 45 ns wr_en = 1, rd_en = 0, data_in = 1677941082
+# 
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 45 ns wr_en = 1, rd_en = 0, data_in = 1642144801
+# 
+# 	SLAVE::45 Reading data from FIFO output
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 55 ns wr_en = 1, rd_en = 0, data_in = 2407411035
+# 
+# 	DRIVER::55 Getting data packets from Generator
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 55 ns wr_en = 1, rd_en = 0, data_in = 961602194
+# 
+# 	SLAVE::55 Reading data from FIFO output
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 65 ns wr_en = 1, rd_en = 0, data_in = 2407411035
+# 
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 65 ns wr_en = 1, rd_en = 0, data_in = 1945621837
+# 
+# 	SLAVE::65 Reading data from FIFO output
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 75 ns wr_en = 1, rd_en = 0, data_in = 561517334
+# 
+# 	DRIVER::75 Getting data packets from Generator
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 75 ns wr_en = 1, rd_en = 0, data_in = 313992614
+# 
+# 	SLAVE::75 Reading data from FIFO output
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 85 ns wr_en = 1, rd_en = 0, data_in = 561517334
+# 
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 85 ns wr_en = 1, rd_en = 0, data_in = 3005464201
+# 
+# 	SLAVE::85 Reading data from FIFO output
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 95 ns wr_en = 1, rd_en = 0, data_in = 1642144801
+# 
+# 	DRIVER::95 Getting data packets from Generator
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 95 ns wr_en = 1, rd_en = 0, data_in = 242771957
+# 
+# 	SLAVE::95 Reading data from FIFO output
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 105 ns wr_en = 1, rd_en = 0, data_in = 1642144801
+# 
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 105 ns wr_en = 1, rd_en = 0, data_in = 3588713208
+# 
+# 	SLAVE::105 Reading data from FIFO output
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 1, FULL = 0, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 0, empty: 1
+# 
+# 	 SB::out_queue() : SENT empty event...
+# 
+# 	 SCOREBOARD::chk_empty() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 115 ns wr_en = 1, rd_en = 0, data_in = 961602194
+# 
+# 	DRIVER::115 Getting data packets from Generator
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 115 ns wr_en = 1, rd_en = 0, data_in = 645539216
+# 
+# 	SLAVE::115 Reading data from FIFO output
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=1642144801
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=1642144801
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 125 ns wr_en = 1, rd_en = 0, data_in = 961602194
+# 
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 125 ns wr_en = 1, rd_en = 0, data_in = 1139215567
+# 
+# 	SLAVE::125 Reading data from FIFO output
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 135 ns wr_en = 1, rd_en = 0, data_in = 1945621837
+# 
+# 	DRIVER::135 Getting data packets from Generator
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 135 ns wr_en = 1, rd_en = 0, data_in = 797552427
+# 
+# 	SLAVE::135 Reading data from FIFO output
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=961602194
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=961602194
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 145 ns wr_en = 1, rd_en = 0, data_in = 1945621837
+# 
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 145 ns wr_en = 1, rd_en = 0, data_in = 1297049077
+# 
+# 	SLAVE::145 Reading data from FIFO output
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 155 ns wr_en = 1, rd_en = 0, data_in = 313992614
+# 
+# 	DRIVER::155 Getting data packets from Generator
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 155 ns wr_en = 1, rd_en = 0, data_in = 1763056735
+# 
+# 	SLAVE::155 Reading data from FIFO output
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=1945621837
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=1945621837
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 165 ns wr_en = 1, rd_en = 0, data_in = 313992614
+# 
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 165 ns wr_en = 1, rd_en = 0, data_in = 902479165
+# 
+# 	SLAVE::165 Reading data from FIFO output
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 175 ns wr_en = 1, rd_en = 0, data_in = 3005464201
+# 
+# 	DRIVER::175 Getting data packets from Generator
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 175 ns wr_en = 1, rd_en = 0, data_in = 3653358867
+# 
+# 	SLAVE::175 Reading data from FIFO output
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=313992614
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=313992614
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 185 ns wr_en = 1, rd_en = 0, data_in = 3005464201
+# 
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 185 ns wr_en = 1, rd_en = 0, data_in = 2895809543
+# 
+# 	SLAVE::185 Reading data from FIFO output
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 195 ns wr_en = 1, rd_en = 0, data_in = 242771957
+# 
+# 	DRIVER::195 Getting data packets from Generator
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 195 ns wr_en = 1, rd_en = 0, data_in = 932061454
+# 
+# 	SLAVE::195 Reading data from FIFO output
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=3005464201
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=3005464201
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 205 ns wr_en = 1, rd_en = 0, data_in = 242771957
+# 
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 205 ns wr_en = 1, rd_en = 0, data_in = 876922993
+# 
+# 	SLAVE::205 Reading data from FIFO output
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 215 ns wr_en = 1, rd_en = 0, data_in = 3588713208
+# 
+# 	DRIVER::215 Getting data packets from Generator
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 215 ns wr_en = 1, rd_en = 0, data_in = 2439490946
+# 
+# 	SLAVE::215 Reading data from FIFO output
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=242771957
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=242771957
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 225 ns wr_en = 1, rd_en = 0, data_in = 3588713208
+# 
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 225 ns wr_en = 1, rd_en = 0, data_in = 3105396269
+# 
+# 	SLAVE::225 Reading data from FIFO output
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 235 ns wr_en = 1, rd_en = 0, data_in = 645539216
+# 
+# 	DRIVER::235 Getting data packets from Generator
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 235 ns wr_en = 1, rd_en = 0, data_in = 2247616878
+# 
+# 	SLAVE::235 Reading data from FIFO output
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=3588713208
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=3588713208
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 245 ns wr_en = 1, rd_en = 0, data_in = 645539216
+# 
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 245 ns wr_en = 1, rd_en = 0, data_in = 564734261
+# 
+# 	SLAVE::245 Reading data from FIFO output
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 255 ns wr_en = 1, rd_en = 0, data_in = 1139215567
+# 
+# 	DRIVER::255 Getting data packets from Generator
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 255 ns wr_en = 1, rd_en = 0, data_in = 2586241988
+# 
+# 	SLAVE::255 Reading data from FIFO output
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=645539216
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=645539216
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 265 ns wr_en = 1, rd_en = 0, data_in = 1139215567
+# 
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 265 ns wr_en = 1, rd_en = 0, data_in = 1798309486
+# 
+# 	SLAVE::265 Reading data from FIFO output
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 275 ns wr_en = 1, rd_en = 0, data_in = 797552427
+# 
+# 	DRIVER::275 Getting data packets from Generator
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 275 ns wr_en = 1, rd_en = 0, data_in = 899201310
+# 
+# 	SLAVE::275 Reading data from FIFO output
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=1139215567
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=1139215567
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 285 ns wr_en = 1, rd_en = 0, data_in = 797552427
+# 
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 285 ns wr_en = 1, rd_en = 0, data_in = 2813197575
+# 
+# 	SLAVE::285 Reading data from FIFO output
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 295 ns wr_en = 1, rd_en = 0, data_in = 1297049077
+# 
+# 	DRIVER::295 Getting data packets from Generator
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 295 ns wr_en = 1, rd_en = 0, data_in = 1202244326
+# 
+# 	SLAVE::295 Reading data from FIFO output
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=797552427
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=797552427
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 305 ns wr_en = 1, rd_en = 0, data_in = 1297049077
+# 
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 305 ns wr_en = 1, rd_en = 0, data_in = 3161757973
+# 
+# 	SLAVE::305 Reading data from FIFO output
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 315 ns wr_en = 1, rd_en = 0, data_in = 1763056735
+# 
+# 	DRIVER::315 Getting data packets from Generator
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 315 ns wr_en = 1, rd_en = 0, data_in = 934488610
+# 
+# 	SLAVE::315 Reading data from FIFO output
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=1297049077
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=1297049077
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 325 ns wr_en = 1, rd_en = 0, data_in = 1763056735
+# 
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 325 ns wr_en = 1, rd_en = 0, data_in = 3880765502
+# 
+# 	SLAVE::325 Reading data from FIFO output
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 335 ns wr_en = 1, rd_en = 0, data_in = 902479165
+# 
+# 	DRIVER::335 Getting data packets from Generator
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 335 ns wr_en = 1, rd_en = 0, data_in = 1097781804
+# 
+# 	SLAVE::335 Reading data from FIFO output
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=1763056735
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=1763056735
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 345 ns wr_en = 1, rd_en = 0, data_in = 902479165
+# 
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 345 ns wr_en = 1, rd_en = 0, data_in = 348363167
+# 
+# 	SLAVE::345 Reading data from FIFO output
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 355 ns wr_en = 1, rd_en = 0, data_in = 3653358867
+# 
+# 	DRIVER::355 Getting data packets from Generator
+# 	SLAVE DRIVER::run() Transaction info FROM GEN: 355 ns wr_en = 1, rd_en = 0, data_in = 3423652137
+# 
+# 	SLAVE::355 Reading data from FIFO output
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=902479165
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=902479165
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 365 ns wr_en = 1, rd_en = 0, data_in = 3653358867
+# 
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 375 ns wr_en = 1, rd_en = 0, data_in = 2895809543
+# 
+# 	DRIVER::375 Getting data packets from Generator
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=3653358867
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=3653358867
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 385 ns wr_en = 1, rd_en = 0, data_in = 2895809543
+# 
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 395 ns wr_en = 1, rd_en = 0, data_in = 932061454
+# 
+# 	DRIVER::395 Getting data packets from Generator
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=2895809543
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=2895809543
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 405 ns wr_en = 1, rd_en = 0, data_in = 932061454
+# 
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 415 ns wr_en = 1, rd_en = 0, data_in = 876922993
+# 
+# 	DRIVER::415 Getting data packets from Generator
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=932061454
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=932061454
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 425 ns wr_en = 1, rd_en = 0, data_in = 876922993
+# 
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 435 ns wr_en = 1, rd_en = 0, data_in = 2439490946
+# 
+# 	DRIVER::435 Getting data packets from Generator
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=876922993
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=876922993
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 445 ns wr_en = 1, rd_en = 0, data_in = 2439490946
+# 
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 455 ns wr_en = 1, rd_en = 0, data_in = 3105396269
+# 
+# 	DRIVER::455 Getting data packets from Generator
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=2439490946
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=2439490946
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 465 ns wr_en = 1, rd_en = 0, data_in = 3105396269
+# 
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 475 ns wr_en = 1, rd_en = 0, data_in = 2247616878
+# 
+# 	DRIVER::475 Getting data packets from Generator
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=3105396269
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=3105396269
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 485 ns wr_en = 1, rd_en = 0, data_in = 2247616878
+# 
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 495 ns wr_en = 1, rd_en = 0, data_in = 564734261
+# 
+# 	DRIVER::495 Getting data packets from Generator
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=2247616878
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=2247616878
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 505 ns wr_en = 1, rd_en = 0, data_in = 564734261
+# 
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 515 ns wr_en = 1, rd_en = 0, data_in = 2586241988
+# 
+# 	DRIVER::515 Getting data packets from Generator
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=564734261
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=564734261
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 525 ns wr_en = 1, rd_en = 0, data_in = 2586241988
+# 
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 535 ns wr_en = 1, rd_en = 0, data_in = 1798309486
+# 
+# 	DRIVER::535 Getting data packets from Generator
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=2586241988
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=2586241988
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 545 ns wr_en = 1, rd_en = 0, data_in = 1798309486
+# 
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 555 ns wr_en = 1, rd_en = 0, data_in = 899201310
+# 
+# 	DRIVER::555 Getting data packets from Generator
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=1798309486
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=1798309486
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 565 ns wr_en = 1, rd_en = 0, data_in = 899201310
+# 
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 575 ns wr_en = 1, rd_en = 0, data_in = 2813197575
+# 
+# 	DRIVER::575 Getting data packets from Generator
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=899201310
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=899201310
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 585 ns wr_en = 1, rd_en = 0, data_in = 2813197575
+# 
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 595 ns wr_en = 1, rd_en = 0, data_in = 1202244326
+# 
+# 	DRIVER::595 Getting data packets from Generator
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=2813197575
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=2813197575
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 605 ns wr_en = 1, rd_en = 0, data_in = 1202244326
+# 
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 615 ns wr_en = 1, rd_en = 0, data_in = 3161757973
+# 
+# 	DRIVER::615 Getting data packets from Generator
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=1202244326
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=1202244326
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 625 ns wr_en = 1, rd_en = 0, data_in = 3161757973
+# 
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 635 ns wr_en = 1, rd_en = 0, data_in = 934488610
+# 
+# 	DRIVER::635 Getting data packets from Generator
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=3161757973
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=3161757973
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 645 ns wr_en = 1, rd_en = 0, data_in = 934488610
+# 
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 655 ns wr_en = 1, rd_en = 0, data_in = 3880765502
+# 
+# 	DRIVER::655 Getting data packets from Generator
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=934488610
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=934488610
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 665 ns wr_en = 1, rd_en = 0, data_in = 3880765502
+# 
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 675 ns wr_en = 1, rd_en = 0, data_in = 1097781804
+# 
+# 	DRIVER::675 Getting data packets from Generator
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=3880765502
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=3880765502
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 685 ns wr_en = 1, rd_en = 0, data_in = 1097781804
+# 
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 695 ns wr_en = 1, rd_en = 0, data_in = 348363167
+# 
+# 	DRIVER::695 Getting data packets from Generator
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=1097781804
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=1097781804
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 705 ns wr_en = 1, rd_en = 0, data_in = 348363167
+# 
+# 	MASTER DRIVER::run() Transaction info FROM GEN: 715 ns wr_en = 1, rd_en = 0, data_in = 3423652137
+# 
+# 	DRIVER::715 Getting data packets from Generator
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=348363167
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=348363167
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	MASTER DRIVER::run() Transaction info INTO DUT: 725 ns wr_en = 1, rd_en = 0, data_in = 3423652137
+# 
+# 	INPUT MONITOR::sample() : Write detected, updating mailbox to send to scoreboard. Transaction info: wr_en = 1, rd_en = 0, data_in=3423652137
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	SCOREBOARD::in_queue() : Transaction info: wr_en = 1, rd_en = 0, data_in=3423652137
+# 
+# 	 SB::in_queue() : SENT data_in event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# ** Error: Assertion error.
+#    Time: 745 ns Started: 745 ns  Scope: fifo_top.DUT.b_assertions.a_invalid_wr_full File: fifo_assertions.sv Line: 37
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# 	OUTPUT MONITOR::sample() : FULL or EMPTY or DATA_OUT detected, updating mailbox to send to scoreboard. Transaction info: EMPTY = 0, FULL = 1, data_out = 0
+# 
+# 	SCOREBOARD::out_queue() : Transaction info: wr_en = 0, rd_en = 0, data_out=0, full : 1, empty: 0
+# 
+# 	 SB::out_queue() : SENT full event...
+# 
+# 	 SCOREBOARD::chk_full() : PASSED 
+#  	 EXP: 1 	 RTL : 1
+# 
+# ** Note: $finish    : fifo_env.sv(80)
+#    Time: 1 us  Iteration: 1  Instance: /fifo_top/t1
+# 1
+# Break in Task fifo_tb_pkg/fifo_env::run at fifo_env.sv line 80
+quit -sim
+# End time: 12:26:14 on Aug 05,2020, Elapsed time: 0:02:48
+# Errors: 1, Warnings: 3
+vlog -sv fifo.sv fifo_intf.sv fifo_top.sv
+# QuestaSim-64 vlog 10.4e Compiler 2016.04 Apr  9 2016
+# Start time: 12:26:18 on Aug 05,2020
+# vlog -reportprogress 300 -sv fifo.sv fifo_intf.sv fifo_top.sv 
+# -- Compiling module fifo
+# -- Compiling interface fifo_intf
+# -- Compiling module fifo_assertions
+# -- Compiling package fifo_tb_pkg
+# -- Compiling package fifo_top_sv_unit
+# -- Importing package fifo_tb_pkg
+# -- Compiling program test
+# -- Compiling program write_only_test
+# -- Compiling program write_read_test
+# -- Compiling module fifo_top
+# 
+# Top level modules:
+# 	test
+# 	write_read_test
+# 	fifo_top
+# End time: 12:26:19 on Aug 05,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+cd F:/Programming/FIFO_TB_UVM
+# reading C:/questasim64_10.4e/win64/../modelsim.ini
+cat Makefile
+# Commands for ModelSim/Questa
+# all:	compile start_sim add_wave run quit
+# 
+# 
+# compile:
+# 	vlog -sv fifo.sv fifo_intf.sv fifo_top.sv	
+#vlog -sv fifo.sv fifo_intf.sv fifo_env.sv test.sv fifo_top.sv
+# 
+# start_sim:
+# 	vsim -voptargs=+acc work.fifo_top -novopt +test_name="write_only"	# test_name can be changed accordingly
+# 
+# add_wave:
+# 	do waves.do
+# 
+# 
+# run:
+# 	run -all
+# 
+# quit:
+# 	quit -sim
+# 
+# 
+# 
+vlog -sv fifo.sv fifo_intf.sv fifo_top.sv
+# QuestaSim-64 vlog 10.4e Compiler 2016.04 Apr  9 2016
+# Start time: 13:29:52 on Aug 06,2020
+# vlog -reportprogress 300 -sv fifo.sv fifo_intf.sv fifo_top.sv 
+# -- Compiling module fifo
+# -- Compiling interface fifo_intf
+# ** Note: (vlog-2286) Using implicit +incdir+C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# 
+# -- Compiling package fifo_top_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package fifo_tb_pkg
+# -- Compiling module fifo_assertions
+# -- Compiling package fifo_tb_pkg
+# -- Compiling program test
+# -- Compiling program write_only_test
+# -- Compiling program write_read_test
+# -- Compiling module fifo_top
+# 
+# Top level modules:
+# 	test
+# 	write_only_test
+# 	fifo_top
+# End time: 13:29:58 on Aug 06,2020, Elapsed time: 0:00:06
+# Errors: 0, Warnings: 0
+vsim -voptargs=+acc work.fifo_top -novopt +test_name="write_only"
+# vsim -voptargs="+acc" work.fifo_top -novopt "+test_name="write_only"" 
+# Start time: 13:30:21 on Aug 06,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing F:/Programming/FIFO_TB_UVM/work.fifo_top
+# Refreshing F:/Programming/FIFO_TB_UVM/work.fifo_top_sv_unit
+# Refreshing F:/Programming/FIFO_TB_UVM/work.fifo_tb_pkg
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.fifo_tb_pkg
+# Loading work.fifo_top_sv_unit
+# Loading work.fifo_top
+# Refreshing F:/Programming/FIFO_TB_UVM/work.fifo_intf
+# Loading work.fifo_intf
+# Refreshing F:/Programming/FIFO_TB_UVM/work.fifo
+# Loading work.fifo
+# Refreshing F:/Programming/FIFO_TB_UVM/work.write_read_test
+# Loading work.write_read_test
+# Loading mtiUvm.questa_uvm_pkg
+# Refreshing F:/Programming/FIFO_TB_UVM/work.fifo_assertions
+# Loading work.fifo_assertions
+# ** Error: (vsim-7065) fifo_agent.sv(36): Illegal assignment to class mtiUvm.uvm_pkg::uvm_port_base #(class mtiUvm.uvm_pkg::uvm_sqr_if_base #(class mtiUvm.uvm_pkg::uvm_sequence_item, class mtiUvm.uvm_pkg::uvm_sequence_item)) from class mtiUvm.uvm_pkg::uvm_seq_item_pull_imp #(class work.fifo_tb_pkg::fifo_seq_item #(32), class work.fifo_tb_pkg::fifo_seq_item #(32), class mtiUvm.uvm_pkg::uvm_sequencer #(class work.fifo_tb_pkg::fifo_seq_item #(32), class work.fifo_tb_pkg::fifo_seq_item #(32)))
+#    Time: 0 ns  Iteration: 0  Region: /fifo_tb_pkg File: fifo_tb_pkg.sv
+# ** Error (suppressible): (vsim-13215) fifo_output_mon.sv(47): Cannot assign an unpacked type 'class work.fifo_tb_pkg::fifo_seq_item #(32)' to a packed type 'int'.
+#    Time: 0 ns  Iteration: 0  Region: /fifo_tb_pkg File: fifo_tb_pkg.sv
+# ** Error (suppressible): (vsim-13215) fifo_input_mon.sv(47): Cannot assign an unpacked type 'class work.fifo_tb_pkg::fifo_seq_item #(32)' to a packed type 'int'.
+#    Time: 0 ns  Iteration: 0  Region: /fifo_tb_pkg File: fifo_tb_pkg.sv
+# ** Error: (vsim-8754) fifo_input_mon.sv(47): Actual input arg. of type 'class work.fifo_tb_pkg::fifo_seq_item #(32)' for formal 't' of 'write' is not compatible with the formal's type 'int'.
+#    Time: 0 ns  Iteration: 0  Region: /fifo_tb_pkg File: fifo_tb_pkg.sv
+# ** Error: (vsim-8754) fifo_output_mon.sv(47): Actual input arg. of type 'class work.fifo_tb_pkg::fifo_seq_item #(32)' for formal 't' of 'write' is not compatible with the formal's type 'int'.
+#    Time: 0 ns  Iteration: 0  Region: /fifo_tb_pkg File: fifo_tb_pkg.sv
+# ** Error: (vsim-8754) fifo_agent.sv(36): Actual input arg. of type 'class mtiUvm.uvm_pkg::uvm_seq_item_pull_imp #(class work.fifo_tb_pkg::fifo_seq_item #(32), class work.fifo_tb_pkg::fifo_seq_item #(32), class mtiUvm.uvm_pkg::uvm_sequencer #(class work.fifo_tb_pkg::fifo_seq_item #(32), class work.fifo_tb_pkg::fifo_seq_item #(32)))' for formal 'provider' of 'connect' is not compatible with the formal's type 'class mtiUvm.uvm_pkg::uvm_port_base #(class mtiUvm.uvm_pkg::uvm_sqr_if_base #(class mtiUvm.uvm_pkg::uvm_sequence_item, class mtiUvm.uvm_pkg::uvm_sequence_item))'.
+#    Time: 0 ns  Iteration: 0  Region: /fifo_tb_pkg File: fifo_tb_pkg.sv
+# Error loading design
+# End time: 13:30:40 on Aug 06,2020, Elapsed time: 0:00:19
+# Errors: 6, Warnings: 1

@@ -1,0 +1,109 @@
+/*
+* File: fifo_top.sv
+* Author: Varun Anand
+* Mentor: Varsha Anand, Verification Engineer
+* Description: Fifo top file containing instantiations of 
+* interface, DUT, test. Also contains clock generation logic
+* and reset logic.
+*/
+
+// Include and Import RTL files
+//`include "fifo_rtl_pkg.sv"
+//import fifo_rtl_pkg::*;
+
+// Include and Import TB files
+//`include "fifo_tb_pkg.sv"
+//import fifo_tb_pkg::*;
+
+`timescale 1ns/1ns
+`include "fifo_assertions.sv"
+//import uvm_pkg::*;
+`include "test_suite.sv"
+
+module fifo_top;		// Testbench top file
+	// Clock gen logic
+	bit clk;
+	int clk_delay = 5;
+	
+	int clk_period = clk_delay*2;
+	always begin
+		#clk_delay clk = ~clk;
+	end
+	
+	
+	wire wr_en;
+	wire rd_en;
+	wire [`DEF_FIFO_WIDTH-1:0] data_in;
+	wire [`DEF_FIFO_WIDTH-1:0] data_out;
+	wire empty;
+	wire full;	
+
+	logic rstN;
+	
+	initial begin
+		rstN = 0;
+		#100 rstN = 1;
+	end
+	
+	// include assertion for clock period
+	property clk_period_p (int clk_period);
+		time current_time;
+		@(posedge clk) disable iff(!rstN)
+		('1, current_time=$time) |=> (clk_period == ($time-current_time));
+	endproperty: clk_period_p
+
+	a_clk_period: assert property (@(posedge clk) clk_period_p(clk_period))
+			//$display("\t FIFO_TOP:: clk period assertion passed at %t\n",$time);
+			else
+			$error("\t FIFO_TOP:: clk period assertion FAILED at %t\n",$time);
+	
+
+	// instantiate interface 
+	fifo_intf 	#(.FIFO_WIDTH(`DEF_FIFO_WIDTH),
+			.FIFO_DEPTH(`DEF_FIFO_DEPTH))
+			intf 	
+				(.clk(clk),
+				.rstN(rstN),
+				.wr_en(wr_en),			// write enable
+				.data_in(data_in),		// Input Data
+				.rd_en(rd_en),			// read enable
+				.empty(empty),			// fifo empty
+				.full(full),			// fifo full
+				.data_out(data_out)		// Output data
+			);
+	
+	
+	// Connect DUT and interface signals
+	fifo 	 	#(.FIFO_WIDTH(`DEF_FIFO_WIDTH),
+			.FIFO_DEPTH(`DEF_FIFO_DEPTH))
+			DUT	(
+			.clk(intf.clk),
+			.rstN(intf.rstN),
+			.wr_en(intf.wr_en),
+			.rd_en(intf.rd_en),
+			.data_in(intf.data_in),
+			.data_out(intf.data_out),
+			.empty(intf.empty),
+			.full(intf.full)
+			);	
+
+       	bind fifo fifo_assertions b_assertions(.*);	// Connecting DUT signals with assertion module signals
+
+	string test_name;
+
+	initial begin			// Initial block to choose the right test to instantiate
+		if ($value$plusargs ("test=%s", test_name))
+      		$display ("Chosen test : %s", test_name);
+	end
+	
+	// Uncomment appropriate test to be run
+	
+	write_only_test t1(intf);
+	//write_read_test t1(intf);
+	//test t1(intf);
+
+	initial begin			// for dumping signals
+		$dumpfile("dump.wlf");
+		$dumpvars;
+	end
+endmodule
