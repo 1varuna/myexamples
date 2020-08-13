@@ -1,2 +1,0 @@
-`define DEF_FIFO_WIDTH 32
-`define DEF_FIFO_DEPTH 2**5
